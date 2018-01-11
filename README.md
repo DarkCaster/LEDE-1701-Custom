@@ -8,7 +8,7 @@ Customizations and patches applied to vanilla source code at "custom" branch:
 
 * Changes to "tmpfs on zram" feature - altered options for mkfs.ext4, added some mount options in order to improve performance a bit
 
-## Kernel patches and config changes
+## Kernel patches and config changes (only 4.4 branch for now)
 
 Patches applied for all kernels, but kernel-config changes now performed only for ar71xx and x86 builds,
 other configs are left intact for now. Use "make kernel_menuconfig" to manually enable features that require config updates (UKSM and BFS for now).
