@@ -4,7 +4,7 @@ Customizations and patches applied to vanilla source code at "custom" branch:
 
 ## NETGEAR WNR2200 board support
 
-  * Added build profile for 16MiB-flash board version, sutable for Russian and (maybe) Chinese router revisions.
+  * Added build profile for 16MiB-flash board version, suitable for Russian and (maybe) Chinese router revisions.
 
 ### _WARNING!_
 
@@ -13,7 +13,7 @@ _See more info [here](https://wiki.openwrt.org/doc/howto/generic.backup)._
 
 _You should create ART-partition backup ONLY from stock NETGEAR firmware._
 _See more info [here](https://wiki.openwrt.org/toh/netgear/telnet.console)._
-_Creating ART-partition backup on 8MiB firmware flashed on 16MiB board will result in broken backup because of incorrect flash-memory mapping stored in firmware._
+_Creating ART-partition backup with 8MiB OpenWRT(LEDE) firmware flashed on 16MiB board will result in broken backup because of incorrect flash-memory mapping stored in firmware._
 
 ## Procd changes
 
@@ -25,9 +25,9 @@ Patches applied for all kernels, but kernel-config changes now performed only fo
 other configs are left intact for now. Use "make kernel_menuconfig" to manually enable features that require config updates (UKSM and BFS for now).
 
   * Added [UKSM feature](http://kerneldedup.org/projects/uksm/download).
-  It helps when using router as simple server (especially when using debian inside LXC). Highly experimental, USE AT YOUR OWN RISK! May be removed in future.
+  It helps when using router as server, especially when running another OS (debian for mips, for example) inside LXC container.
 
-  * Added [BFS feature](http://ck.kolivas.org/patches/bfs). Does not help much for ar71xx boads, so it may be removed someday.
+  * Added [BFS feature](http://ck.kolivas.org/patches/bfs). Does not help much for ar71xx boads, so it may be removed in future.
 
   * Kernel config changes to enable proper LXC support, enabled FPU emulator for ar71xx boards to support running debian for mips inside LXC container.
 
