@@ -48,6 +48,6 @@ ifdef CONFIG_PKG_RELRO_FULL
   endif
 endif
 ifdef CONFIG_PKG_LOOSEN_OPTS
-  TARGET_CFLAGS += -Wno-error=all -Wno-error=format-truncation -Wno-error=misleading-indentation -Wno-error=pointer-compare -Wno-error=misleading-indentation -Wno-narrowing -Wno-implicit-fallthrough
-  TARGET_CXXFLAGS += -Wno-error=all -Wno-error=format-truncation -Wno-error=misleading-indentation -Wno-error=pointer-compare -Wno-error=misleading-indentation -Wno-narrowing -Wno-implicit-fallthrough -fpermissive
+  TARGET_CFLAGS += -Wno-error=all -Wno-error=memset-elt-size -Wno-error=format-truncation -Wno-error=pointer-compare -Wno-error=misleading-indentation -Wno-narrowing -Wno-implicit-fallthrough
+  TARGET_CXXFLAGS += -Wno-error=all -Wno-error=memset-elt-size -Wno-error=format-truncation -Wno-error=pointer-compare -Wno-error=misleading-indentation -Wno-narrowing -Wno-implicit-fallthrough -fpermissive
 endif
