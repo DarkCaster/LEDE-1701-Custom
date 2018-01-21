@@ -248,4 +248,12 @@ menu "Global build settings"
 			bool "Full"
 	endchoice
 
+	config PKG_LOOSEN_OPTS
+		bool
+		prompt "Disable GCC warnings treated as errors"
+		default y
+		help
+		  Add -Wno-error, -fpermissive flags to compiler commandline in order
+		  to help with compiling some of deprecated code with newer GCC versions
+
 endmenu

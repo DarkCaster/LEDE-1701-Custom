@@ -47,4 +47,7 @@ ifdef CONFIG_PKG_RELRO_FULL
     TARGET_LDFLAGS += -znow -zrelro
   endif
 endif
-
+ifdef CONFIG_PKG_LOOSEN_OPTS
+  TARGET_CFLAGS += -Wno-error=all -Wno-error=format-truncation -Wno-error=misleading-indentation -Wno-error=pointer-compare -Wno-error=misleading-indentation -Wno-narrowing
+  TARGET_CXXFLAGS += -Wno-error=all -Wno-error=format-truncation -Wno-error=misleading-indentation -Wno-error=pointer-compare -Wno-error=misleading-indentation -Wno-narrowing -fpermissive
+endif
