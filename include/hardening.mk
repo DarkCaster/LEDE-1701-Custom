@@ -49,7 +49,7 @@ ifdef CONFIG_PKG_RELRO_FULL
 endif
 ifdef CONFIG_PKG_LOOSEN_OPTS
   ifdef CONFIG_GCC_USE_VERSION_6
-    TARGET_CFLAGS += -Wno-error=all -Wno-error=deprecated -Wno-error=misleading-indentation
+    TARGET_CFLAGS += -Wno-error=all -Wno-error=deprecated -Wno-error=misleading-indentation -Wno-narrowing
     TARGET_CXXFLAGS += -Wno-error=all -Wno-error=deprecated -Wno-error=misleading-indentation -Wno-narrowing -fpermissive
   endif
   ifdef CONFIG_GCC_USE_VERSION_7
