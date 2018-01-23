@@ -48,6 +48,12 @@ ifdef CONFIG_PKG_RELRO_FULL
   endif
 endif
 ifdef CONFIG_PKG_LOOSEN_OPTS
-  TARGET_CFLAGS += -Wno-error=all -Wno-error=memset-elt-size -Wno-error=deprecated -Wno-error=format-truncation -Wno-error=pointer-compare -Wno-error=misleading-indentation -Wno-implicit-fallthrough -Wno-error=int-in-bool-context -Wno-error=format-overflow
-  TARGET_CXXFLAGS += -Wno-error=all -Wno-error=memset-elt-size -Wno-error=deprecated -Wno-error=format-truncation -Wno-error=pointer-compare -Wno-error=misleading-indentation -Wno-narrowing -Wno-implicit-fallthrough -Wno-error=int-in-bool-context -Wno-error=format-overflow -fpermissive
+  ifdef CONFIG_GCC_USE_VERSION_6
+    TARGET_CFLAGS += -Wno-error=all -Wno-error=deprecated -Wno-error=misleading-indentation
+    TARGET_CXXFLAGS += -Wno-error=all -Wno-error=deprecated -Wno-error=misleading-indentation -Wno-narrowing -fpermissive
+  endif
+  ifdef CONFIG_GCC_USE_VERSION_7
+    TARGET_CFLAGS += -Wno-error=all -Wno-error=memset-elt-size -Wno-error=deprecated -Wno-error=format-truncation -Wno-error=pointer-compare -Wno-error=misleading-indentation -Wno-implicit-fallthrough -Wno-error=int-in-bool-context -Wno-error=format-overflow
+    TARGET_CXXFLAGS += -Wno-error=all -Wno-error=memset-elt-size -Wno-error=deprecated -Wno-error=format-truncation -Wno-error=pointer-compare -Wno-error=misleading-indentation -Wno-narrowing -Wno-implicit-fallthrough -Wno-error=int-in-bool-context -Wno-error=format-overflow -fpermissive
+  endif
 endif
